@@ -4,7 +4,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "net.serenity-bdd:serenity-gradle-plugin:2.1.4"
+        classpath "net.serenity-bdd:serenity-gradle-plugin:2.3.31"
         classpath "net.serenity-bdd:serenity-single-page-report:2.1.4"
     }
 }
@@ -24,25 +24,36 @@ repositories {
 }
 
 
-ext {
-    slf4jVersion = '1.7.7'
-    serenityCoreVersion = '2.3.12'
-    junitVersion = '4.13.1'
-    assertJVersion = '3.8.0'
-    logbackVersion = '1.2.3'
-}
-
 dependencies {
-    testCompile "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
-            "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
-            "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
-            "junit:junit:${junitVersion}",
-            "org.assertj:assertj-core:${assertJVersion}"
+    testCompile "net.serenity-bdd:serenity-core:2.3.33",
+            "net.serenity-bdd:serenity-junit:2.3.33",
+            "net.serenity-bdd:serenity-cucumber6:2.3.33",
+            "io.cucumber:cucumber-core:6.10.4",
+            "io.cucumber:cucumber-junit:6.10.4",
+            "org.assertj:assertj-core:3.8.0",
+            "io.cucumber:cucumber-java:6.10.4",
+            "net.serenity-bdd:serenity-rest-assured:2.4.24"
 }
 
-
-/*
-serenity {
-    reports = ["single-page-html"]
+configurations {
+    cucumberRuntime {
+        extendsFrom testRuntime
+    }
 }
-*/
+
+configurations.all {
+    resolutionStrategy {
+        force "io.cucumber:cucumber-core:6.10.4"
+    }
+}
+
+task cucumber() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
+        }
+    }
+}
