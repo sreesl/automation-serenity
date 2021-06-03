@@ -1,12 +1,13 @@
 package stepdefinitions;
 import io.cucumber.java.en.*;
+import io.cucumber.junit.*;
+
 
 public class StepDefinition {
 
     @Given("api endpoint is set with {string}")
     public void api_endpoint_is_set_with_key(String arg) {
         System.out.println("inside given"+arg);
-
     }
 
     @When("HTTP request is triggered with {string}")
@@ -20,4 +21,8 @@ public class StepDefinition {
         System.out.println("inside then"+arg);
 
     }
+
+
+
+
 }

@@ -3,6 +3,7 @@ buildscript {
         mavenLocal()
         jcenter()
     }
+    
     dependencies {
         classpath "net.serenity-bdd:serenity-gradle-plugin:2.3.31"
         classpath "net.serenity-bdd:serenity-single-page-report:2.1.4"
@@ -47,13 +48,16 @@ configurations.all {
     }
 }
 
+
 task cucumber() {
     dependsOn assemble, testClasses
     doLast {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
+            args = ['--plugin', 'pretty', '--glue', 'stepdefinitions', 'src/test/resources']
         }
     }
 }
+
+
