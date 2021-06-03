@@ -4,20 +4,18 @@ API automation using Serenity and Cucumber
 
 ## 📦 Install
 
-Prerequisites: ??
+###Pre-requisite:
+Java
+
+Gradle
 
 ```sh
-enter commands
+gradle build
 ```
 
-## 🏎 Run
-
-```sh
-run command
-```
 
 ## ✅ Test
 
 ```sh
-test command
+gradle cucumber
 ```

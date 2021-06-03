@@ -3,7 +3,7 @@ Feature: Validate the endpoints offered by New York Times Best Seller Lists
   Scenario Outline: Verify api authentication
     Given api endpoint is set with "<key>"
     When HTTP request is triggered with "<endpoint>"
-    Then api returns a response "<code>"
+    Then api returns a response <code>
 
     Examples:
     | endpoint| key | code |
