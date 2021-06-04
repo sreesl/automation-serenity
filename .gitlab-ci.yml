@@ -17,8 +17,8 @@ test:
   stage: test
   script:
     - gradle cucumber
-  allow_failure: true  
+    - gradle aggregate 
   artifacts:
     when: always
     paths:
-      - ./target/site/serenity
+      - target/site/serenity
