@@ -6,7 +6,7 @@ import io.restassured.specification.RequestSpecification;
 import static net.serenitybdd.rest.SerenityRest.given;
 import io.restassured.response.Response;
 import org.junit.Assert;
-import io.restassured.RestAssured.*;
+
 
 public class StepDefinition {
 
@@ -35,7 +35,12 @@ public class StepDefinition {
 
     @Given("an HTTP request is triggered with {string} {string}")
         public void fetch_review(String endpoint, String key){
-            response = given().queryParam("api-key",key)
+        try{
+            Thread.sleep(10000);
+        }
+        catch(InterruptedException e){}
+            response = given().header("Retry-After","30000")
+                    .queryParam("api-key",key)
                     .get(endpoint).then().extract().response();
     }
 
@@ -46,7 +51,7 @@ public class StepDefinition {
         String status = response.jsonPath().get("status");
         String copyright = response.jsonPath().get("copyright");
 
-        Assert.assertEquals("application/json", content_type);
+        Assert.assertTrue(content_type.contains("application/json"));
         Assert.assertEquals("OK", status);
         Assert.assertEquals("Copyright (c) 2021 The New York Times Company.  All Rights Reserved.", copyright);
     }
@@ -57,12 +62,12 @@ public class StepDefinition {
         int status_code = response.getStatusCode();
         String content_type = response.header("Content-Type");
         String status = response.jsonPath().get("status");
+        String copyright = response.jsonPath().get("copyright");
 
+        Assert.assertTrue(content_type.contains("application/json"));
         Assert.assertEquals(400, status_code);
         Assert.assertEquals("ERROR", status);
-        Assert.assertEquals("application/json", content_type);
+        Assert.assertEquals("Copyright (c) 2021 The New York Times Company.  All Rights Reserved.", copyright);
     }
 
 }
-
-
