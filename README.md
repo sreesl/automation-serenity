@@ -1,21 +1,24 @@
-# Automating xxx API Endpoints
+# Automating New York Book API Endpoints
 
 API automation using Serenity and Cucumber
 
 ## 📦 Install
 
 ###Pre-requisite:
-Java
-
-Gradle
+* Java 11
+* Gradle 7
 
 ```sh
 gradle build
 ```
 
-
 ## ✅ Test
 
 ```sh
-gradle cucumber
+gradle test
+```
+## ✅ Reports
+
+```sh
+gradle reports
 ```
