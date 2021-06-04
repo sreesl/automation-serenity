@@ -35,10 +35,6 @@ public class StepDefinition {
 
     @Given("an HTTP request is triggered with {string} {string}")
         public void fetch_review(String endpoint, String key){
-        try{
-            Thread.sleep(10000);
-        }
-        catch(InterruptedException e){}
             response = given().header("Retry-After","30000")
                     .queryParam("api-key",key)
                     .get(endpoint).then().extract().response();
