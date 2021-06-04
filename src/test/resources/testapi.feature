@@ -11,9 +11,9 @@ Feature: Validate the endpoints offered by New York Times Best Seller Lists
     | endpoint| key | code |
     | https://api.nytimes.com/svc/books/v3/lists/names.json | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH | 200 |
     | https://api.nytimes.com/svc/books/v3/lists/overview.json | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH | 200 |
-   // | https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH | 200 |
-   // | https://api.nytimes.com/svc/books/v3/lists.json?list=hardcover-fiction | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH | 200 |
-   // | https://api.nytimes.com/svc/books/v3/reviews.json?author=Michelle Obama | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH | 200 |
+# | https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH | 200 |
+# | https://api.nytimes.com/svc/books/v3/lists.json?list=hardcover-fiction | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH | 200 |
+# | https://api.nytimes.com/svc/books/v3/reviews.json?author=Michelle Obama | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH | 200 |
 
 
   Scenario Outline: Verify api authentication with invalid key
@@ -25,9 +25,9 @@ Feature: Validate the endpoints offered by New York Times Best Seller Lists
       | endpoint| key | code |
       | https://api.nytimes.com/svc/books/v3/lists/names.json | invalid_key | 401 |
       | https://api.nytimes.com/svc/books/v3/lists/overview.json | invalid_key | 401 |
-    // | https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json | invalid_key | 401 |
-    // | https://api.nytimes.com/svc/books/v3/lists.json?list=hardcover-fiction | invalid_key | 401 |
-    // | https://api.nytimes.com/svc/books/v3/reviews.json?author=Michelle Obama | invalid_key | 401 |
+# | https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json | invalid_key | 401 |
+# | https://api.nytimes.com/svc/books/v3/lists.json?list=hardcover-fiction | invalid_key | 401 |
+# | https://api.nytimes.com/svc/books/v3/reviews.json?author=Michelle Obama | invalid_key | 401 |
 
 
   Scenario Outline: Verify response for Book endpoints with valid input data
