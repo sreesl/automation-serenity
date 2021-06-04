@@ -21,4 +21,4 @@ test:
   artifacts:
     when: always
     paths:
-      - target/site/serenity
+      - ./target/site/serenity
