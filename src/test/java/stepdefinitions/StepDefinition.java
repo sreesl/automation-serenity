@@ -6,6 +6,9 @@ import io.restassured.specification.RequestSpecification;
 import static net.serenitybdd.rest.SerenityRest.given;
 import io.restassured.response.Response;
 import org.junit.Assert;
+import io.restassured.matcher.RestAssuredMatchers.*;
+import org.hamcrest.Matchers.*;
+
 
 
 public class StepDefinition {
@@ -38,6 +41,8 @@ public class StepDefinition {
             response = given().header("Retry-After","30000")
                     .queryParam("api-key",key)
                     .get(endpoint).then().extract().response();
+
+       // response.then().assertThat().body(Match("/resources/schema/list.json"));
     }
 
     @Then("api returns a valid response")
@@ -63,7 +68,7 @@ public class StepDefinition {
         Assert.assertTrue(content_type.contains("application/json"));
         Assert.assertEquals(400, status_code);
         Assert.assertEquals("ERROR", status);
-        Assert.assertEquals("Copyright (c) 2021 The New York Times Company.  All Rights Reserved.", copyright);
+
     }
 
 }

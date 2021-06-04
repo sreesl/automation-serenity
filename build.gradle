@@ -5,7 +5,7 @@ buildscript {
         mavenLocal()
         jcenter()
     }
-    
+
     dependencies {
         classpath "net.serenity-bdd:serenity-gradle-plugin:2.4.24"
         classpath "net.serenity-bdd:serenity-single-page-report:2.4.24"
@@ -34,11 +34,13 @@ dependencies {
             "org.assertj:assertj-core:3.8.0",
             "io.cucumber:cucumber-java:6.10.4",
             "org.slf4j:slf4j-api:2.0.0-alpha1",
-            "org.slf4j:slf4j-simple:2.0.0-alpha1"
+            "org.slf4j:slf4j-simple:2.0.0-alpha1",
+            "io.rest-assured:json-schema-validator:4.4.0",
+            "org.hamcrest:hamcrest:2.2"
 }
 
-test {
-    testLogging.showStandardStreams = false
+test{
+    testLogging.showStandardStreams=false
     systemProperties System.getProperties()
 }
 
