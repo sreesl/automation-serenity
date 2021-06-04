@@ -16,7 +16,7 @@ build:
 test:
   stage: test
   script:
-    - gradle cucumber
+    - gradle test
     - gradle reports
     - gradle aggregate 
   artifacts:
