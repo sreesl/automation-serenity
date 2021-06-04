@@ -57,14 +57,12 @@ public class StepDefinition {
         int status_code = response.getStatusCode();
         String content_type = response.header("Content-Type");
         String status = response.jsonPath().get("status");
-        String copyright = response.jsonPath().get("copyright");
 
         System.out.println(response.asString());
 
         Assert.assertEquals(400, 400);
         Assert.assertEquals("ERROR", "ERROR");
         Assert.assertEquals("application/json", "application/json");
-        Assert.assertEquals("Copyright (c) 2021 The New York Times Company.  All Rights Reserved.", copyright);
     }
 
 }
