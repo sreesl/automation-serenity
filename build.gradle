@@ -33,7 +33,10 @@ dependencies {
             "io.cucumber:cucumber-junit:6.10.4",
             "org.assertj:assertj-core:3.8.0",
             "io.cucumber:cucumber-java:6.10.4",
-            "net.serenity-bdd:serenity-rest-assured:2.4.24"
+            "net.serenity-bdd:serenity-rest-assured:2.4.24",
+            "org.slf4j:slf4j-api:2.0.0-alpha1",
+            "org.slf4j:slf4j-simple:2.0.0-alpha1"
+
 }
 
 configurations {
@@ -52,6 +55,7 @@ configurations.all {
 task cucumber() {
     dependsOn assemble, testClasses
     doLast {
+        mkdir 'build/test-results/'
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
