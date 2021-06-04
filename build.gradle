@@ -1,3 +1,5 @@
+defaultTasks 'clean', 'test', 'aggregate'
+
 buildscript {
     repositories {
         mavenLocal()
@@ -34,28 +36,14 @@ dependencies {
             "org.slf4j:slf4j-api:2.0.0-alpha1",
             "org.slf4j:slf4j-simple:2.0.0-alpha1"
 }
-configurations {
-    cucumberRuntime {
-        extendsFrom testImplementation
-    }
-}
 
-configurations.all {
-    resolutionStrategy {
-        force "io.cucumber:cucumber-core:6.10.4"
-    }
-}
-task cucumber() {
-    dependsOn assemble, testClasses
-    doLast {
-        javaexec {
-            main = "io.cucumber.core.cli.Main"
-            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty', '--glue', 'stepdefinitions', 'src/test/resources']
-        }
-    }
+test {
+    testLogging.showStandardStreams = false
+    systemProperties System.getProperties()
 }
 
 serenity {
     reports = ["single-page-html"]
 }
+
+gradle.startParameter.continueOnFailure = true
