@@ -11,8 +11,7 @@ cache:
 build:
   stage: build
   script:
-    - gradle build
-  allow_failure: true
+    - gradle build -x test
 
 test:
   stage: test
