@@ -59,7 +59,7 @@ public class StepDefinition {
         String status = response.jsonPath().get("status");
         String copyright = response.jsonPath().get("copyright");
 
-        System.out.println(response);
+        System.out.println(response.asString());
 
         Assert.assertEquals(400, 400);
         Assert.assertEquals("ERROR", "ERROR");
