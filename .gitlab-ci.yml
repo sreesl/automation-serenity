@@ -17,7 +17,7 @@ test:
   stage: test
   script:
     - gradle cucumber
-    - gradle aggregate 
+    - gradle reports 
   artifacts:
     when: always
     paths:
