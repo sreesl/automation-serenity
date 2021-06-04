@@ -19,8 +19,7 @@ test:
   script:
     - gradle clean
     - gradle test
-    - gradle reports
-    - gradle aggregate 
+    - gradle report
   artifacts:
     when: always
     paths:
