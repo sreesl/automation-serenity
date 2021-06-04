@@ -5,8 +5,8 @@ buildscript {
     }
     
     dependencies {
-        classpath "net.serenity-bdd:serenity-gradle-plugin:2.3.31"
-        classpath "net.serenity-bdd:serenity-single-page-report:2.1.4"
+        classpath "net.serenity-bdd:serenity-gradle-plugin:2.4.24"
+        classpath "net.serenity-bdd:serenity-single-page-report:2.4.24"
     }
 }
 
@@ -23,14 +23,16 @@ repositories {
 }
 
 dependencies {
-    testImplementation "net.serenity-bdd:serenity-core:2.3.33",
-            "net.serenity-bdd:serenity-junit:2.3.33",
-            "net.serenity-bdd:serenity-cucumber6:2.3.33",
+    testImplementation "net.serenity-bdd:serenity-core:2.4.24",
+            "net.serenity-bdd:serenity-junit:2.4.24",
+            "net.serenity-bdd:serenity-cucumber6:2.4.24",
+            "net.serenity-bdd:serenity-rest-assured:2.4.24",
             "io.cucumber:cucumber-core:6.10.4",
             "io.cucumber:cucumber-junit:6.10.4",
             "org.assertj:assertj-core:3.8.0",
             "io.cucumber:cucumber-java:6.10.4",
-            "net.serenity-bdd:serenity-rest-assured:2.4.24"
+            "org.slf4j:slf4j-api:2.0.0-alpha1",
+            "org.slf4j:slf4j-simple:2.0.0-alpha1"
 }
 configurations {
     cucumberRuntime {
