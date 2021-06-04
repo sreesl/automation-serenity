@@ -18,6 +18,7 @@ test:
   script:
     - gradle cucumber
     - gradle aggregate
+  allow_failure: true  
   artifacts:
     when: always
     paths:
