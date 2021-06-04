@@ -12,6 +12,7 @@ build:
   stage: build
   script:
     - gradle build
+  allow_failure: true
 
 test:
   stage: test
