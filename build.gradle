@@ -10,23 +10,20 @@ buildscript {
     }
 }
 
-plugins {
-    id 'java'
-}
+apply plugin: 'java'
+apply plugin: 'net.serenity-bdd.aggregator'
 
 group 'assessment'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
-
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
-
 dependencies {
-    testCompile "net.serenity-bdd:serenity-core:2.3.33",
+    testImplementation "net.serenity-bdd:serenity-core:2.3.33",
             "net.serenity-bdd:serenity-junit:2.3.33",
             "net.serenity-bdd:serenity-cucumber6:2.3.33",
             "io.cucumber:cucumber-core:6.10.4",
@@ -34,14 +31,12 @@ dependencies {
             "org.assertj:assertj-core:3.8.0",
             "io.cucumber:cucumber-java:6.10.4",
             "net.serenity-bdd:serenity-rest-assured:2.4.24",
-            "org.slf4j:slf4j-api:2.0.0-alpha1",
+             "org.slf4j:slf4j-api:2.0.0-alpha1",
             "org.slf4j:slf4j-simple:2.0.0-alpha1"
-
 }
-
 configurations {
     cucumberRuntime {
-        extendsFrom testRuntime
+        extendsFrom testImplementation
     }
 }
 
@@ -50,12 +45,9 @@ configurations.all {
         force "io.cucumber:cucumber-core:6.10.4"
     }
 }
-
-
 task cucumber() {
     dependsOn assemble, testClasses
     doLast {
-        mkdir 'build/test-results/'
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
@@ -64,4 +56,6 @@ task cucumber() {
     }
 }
 
-
+serenity {
+    reports = ["single-page-html"]
+}
