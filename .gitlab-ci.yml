@@ -16,6 +16,7 @@ build:
 test:
   stage: test
   script:
+    - gradle clean
     - gradle test
     - gradle reports
     - gradle aggregate 
