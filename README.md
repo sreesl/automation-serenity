@@ -1,6 +1,6 @@
-# Automating NYTimes Book API Validation
+# Automating NYTimes Books API Validation
 
-API automation using Serenity, Rest Assured and Cucumber
+API automation using Serenity, Rest Assured and Cucumber for the Books endpoint of New York Times.
 
 ## 📦 How do I set up
 
@@ -13,9 +13,9 @@ API automation using Serenity, Rest Assured and Cucumber
 ```sh
 git clone https://gitlab.com/sreesl/automation-serenity
 ```
-* Go to the project's root directory(automation-serenity) and Run
 
 ## 🏗 Build
+Go to the project's root directory(automation-serenity) and Run
 ```sh
 gradle build -x test
 ```
@@ -27,31 +27,33 @@ gradle test
 ```
 ## 📈 Reports
 
-Inorder to generate report, run the command and Report is available in target/site/serenity/ as index.html and serenity-summary.html
+Inorder to generate report, run the command and respective report will be available in target/site/serenity/ as index.html and serenity-summary.html
 ```sh
 gradle report
 ```
-## 💚 CI Integration
+## 💚 Gitlab Integration
+
 - The tests are set to run in the [pipeline](https://gitlab.com/sreesl/automation-serenity/-/pipelines) in GitLab for every checkin.
 - Add Gitlab config file `.gitlab-ci.yml` 
     - Add task to run your build script
     - Add task to run your test
     - Add task to generate report
 - You can trigger the [pipeline](https://gitlab.com/sreesl/automation-serenity/-/pipelines) by clicking on "Run Pipeline" in the UI.
-- HTML reports are saved as artifacts in the https://gitlab.com/sreesl/automation-serenity/-/jobs/<job#>/artifacts/browse for each job run of job#.
+- HTML reports are saved as artifacts in the gitlab.com/<username>/automation-serenity/-/jobs/<job#>/artifacts/browse for each job run.
    
-     [Sample INDEX HTML Report](https://sreesl.gitlab.io/-/automation-serenity/-/jobs/1320766250/artifacts/target/site/serenity/index.html) to refer.
-     [Sample Single Page HTML Report](https://sreesl.gitlab.io/-/automation-serenity/-/jobs/1320838033/artifacts/target/site/serenity/serenity-summary.html) to refer.
+     Refer [Sample INDEX HTML Report](https://sreesl.gitlab.io/-/automation-serenity/-/jobs/1320766250/artifacts/target/site/serenity/index.html). 
+
+     Refer [Sample Single Page HTML Report](https://sreesl.gitlab.io/-/automation-serenity/-/jobs/1320838033/artifacts/target/site/serenity/serenity-summary.html).
 
 ## 🥒 Extending Tests
 
 - Add new test scenarios in the feature file [testapi.feature](/src/test/resources/testapi.feature) 
-- Add corresponding steps for the new scenarios in the [stepDefinition](/src/test/java/stepdefinitions/StepDefinition.java) file.
+- Add corresponding steps for the new scenarios in the stepDefinitions file [stepDefinition](/src/test/java/stepdefinitions/StepDefinition.java)
 
-Refer official [Cucumber Documentation](https://cucumber.io/docs/guides/10-minute-tutorial/#write-a-scenario)
+Refer further [Cucumber Documentation](https://cucumber.io/docs/guides/10-minute-tutorial/#write-a-scenario)
 
 ## 📝 API Documentation
 
 Note: Requirement around documenting API interactions was not understood well since we already have an offcial [documentation](https://developer.nytimes.com/docs/books-product/1/overview) provided by the NYT.
 
-Tried a basic documentation using SwaggerHub. Check [here](https://app.swaggerhub.com/apis/sreesl/NYT_Books_API/0.1) .
+Attempted a basic documentation using SwaggerHub. Check [here](https://app.swaggerhub.com/apis/sreesl/NYT_Books_API/0.1) .
