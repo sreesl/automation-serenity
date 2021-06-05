@@ -45,8 +45,13 @@ gradle report
 
 ## 🥒 Extending Tests
 
-- We can add new test scenarios in the feature file [testapi.feature](/src/test/resources/testapi.feature) 
-- Add corresponding steps for your new scenarios in the [stepDefinition](/src/test/java/stepdefinitions/StepDefinition.java) file.
+- Add new test scenarios in the feature file [testapi.feature](/src/test/resources/testapi.feature) 
+- Add corresponding steps for the new scenarios in the [stepDefinition](/src/test/java/stepdefinitions/StepDefinition.java) file.
 
 Refer official [Cucumber Documentation](https://cucumber.io/docs/guides/10-minute-tutorial/#write-a-scenario)
 
+## 📝 API Documentation
+
+Note: Requirement around documenting API interactions was not understood well since we already have an offcial [documentation](https://developer.nytimes.com/docs/books-product/1/overview) provided by the NYT.
+
+Tried a basic documentation using SwaggerHub. Check [here]((https://app.swaggerhub.com/apis/sreesl/NYT_Books_API/0.1)) .
