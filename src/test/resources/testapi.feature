@@ -34,6 +34,6 @@ Feature: Validate the endpoints offered by New York Times Best Seller Lists
 
     Examples:
       | endpoint| key |
-      | https://api.nytimes.com/svc/books/v3/reviews.json?author='' | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH |
-      | https://api.nytimes.com/svc/books/v3/lists.json?list='' | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH |
-      | https://api.nytimes.com/svc/books/v3/lists/overview.json?published_date='' | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH |
+      | https://api.nytimes.com/svc/books/v3/reviews.json?author= | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH |
+      | https://api.nytimes.com/svc/books/v3/lists.json?list= | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH |
+      | https://api.nytimes.com/svc/books/v3/lists/overview.json?published_date= | JjkROUOEyNPvgPgAk1fLkRpFv8VoqYHH |
