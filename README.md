@@ -27,7 +27,7 @@ gradle test
 ```
 ## 📈 Reports
 
-Inorder to generate report, run the command and Report is available in target/site/serenity/ as index.html.
+Inorder to generate report, run the command and Report is available in target/site/serenity/ as index.html and serenity-summary.html
 ```sh
 gradle report
 ```
@@ -38,6 +38,15 @@ gradle report
     - Add task to run your test
     - Add task to generate report
 - You can trigger the [pipeline](https://gitlab.com/sreesl/automation-serenity/-/pipelines) by clicking on "Run Pipeline" in the UI.
-- HTML reports are saved as artifacts in the https://gitlab.com/sreesl/automation-serenity/-/jobs/<job#>/artifacts/browse for each job run of job#/\.
+- HTML reports are saved as artifacts in the https://gitlab.com/sreesl/automation-serenity/-/jobs/<job#>/artifacts/browse for each job run of job#.
    
-     [Sample Report](https://sreesl.gitlab.io/-/automation-serenity/-/jobs/1320766250/artifacts/target/site/serenity/index.html) to refer.
+     [Sample INDEX HTML Report](https://sreesl.gitlab.io/-/automation-serenity/-/jobs/1320766250/artifacts/target/site/serenity/index.html) to refer.
+     [Sample Single Page HTML Report](https://sreesl.gitlab.io/-/automation-serenity/-/jobs/1320838033/artifacts/target/site/serenity/serenity-summary.html) to refer.
+
+## 🥒 Extending Tests
+
+- We can add new test scenarios in the feature file [testapi.feature](/src/test/resources/testapi.feature) 
+- Add corresponding steps for your new scenarios in the [stepDefinition](/src/test/java/stepdefinitions/StepDefinition.java) file.
+
+Refer official [Cucumber Documentation](https://cucumber.io/docs/guides/10-minute-tutorial/#write-a-scenario)
+
