@@ -15,6 +15,7 @@ git clone https://gitlab.com/sreesl/automation-serenity
 ```
 * Go to the project's root directory(automation-serenity) and Run
 
+## 🏗 Build
 ```sh
 gradle build -x test
 ```
@@ -24,7 +25,7 @@ Run the tests using the command as below or use 'Run' function in your IDE on te
 ```sh
 gradle test
 ```
-## ✅ Reports
+## 📈 Reports
 
 Inorder to generate report, run the command and Report is available in target/site/serenity/ as index.html.
 ```sh
