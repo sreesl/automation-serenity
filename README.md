@@ -16,7 +16,7 @@ git clone https://gitlab.com/sreesl/automation-serenity
 * Go to the project's root directory(automation-serenity) and Run
 
 ```sh
-gradle build -x
+gradle build -x test
 ```
 
 ## ✅ Test
