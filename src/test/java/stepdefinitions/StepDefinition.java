@@ -17,7 +17,7 @@ public class StepDefinition {
     Response response;
 
     @Given("api endpoint is set with {string}")
-    public void endpoint_set_with_key(String arg) {
+    public void endpoint_set_with_api_key(String arg) {
         request = given().queryParam("api-key",arg);
     }
 
@@ -27,7 +27,7 @@ public class StepDefinition {
     }
 
     @When("HTTP request is triggered with {string}")
-    public void request_is_triggered(String arg) {
+    public void endpoint_is_triggered(String arg) {
         response= request.when().get(arg);
     }
 
@@ -37,7 +37,7 @@ public class StepDefinition {
     }
 
     @Given("an HTTP request is triggered with {string} {string}")
-        public void fetch_review(String endpoint, String key){
+        public void trigger_endpoint(String endpoint, String key){
             response = given().header("Retry-After","30000")
                     .queryParam("api-key",key)
                     .get(endpoint).then().extract().response();
@@ -61,7 +61,6 @@ public class StepDefinition {
         int status_code = response.getStatusCode();
         String content_type = response.header("Content-Type");
         String status = response.jsonPath().get("status");
-        String copyright = response.jsonPath().get("copyright");
 
         Assert.assertTrue(content_type.contains("application/json"));
         Assert.assertEquals(400, status_code);
