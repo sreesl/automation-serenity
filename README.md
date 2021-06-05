@@ -1,6 +1,6 @@
 # Automating NYTimes Book API Validation
 
-API automation using Serenity and Cucumber
+API automation using Serenity, Rest Assured and Cucumber
 
 ## 📦 How do I set up
 
