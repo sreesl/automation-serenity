@@ -4,7 +4,7 @@ API automation using Serenity and Cucumber
 
 ## 📦 How do I set up
 
-###Pre-requisite:
+### Pre-requisite:
     These should be installed in your local machine.
     * Java 11
     * Gradle 7
