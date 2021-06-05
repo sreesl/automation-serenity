@@ -39,7 +39,7 @@ gradle report
     - Add task to run your test
     - Add task to generate report
 - You can trigger the [pipeline](https://gitlab.com/sreesl/automation-serenity/-/pipelines) by clicking on "Run Pipeline" in the UI.
-- HTML reports are saved as artifacts in the gitlab.com/<username>/automation-serenity/-/jobs/<job#>/artifacts/browse for each job run.
+- HTML reports are saved as artifacts in the gitlab.com/{username}/automation-serenity/-/jobs/{job_number}/artifacts/browse for each job run.
    
      Refer [Sample INDEX HTML Report](https://sreesl.gitlab.io/-/automation-serenity/-/jobs/1320766250/artifacts/target/site/serenity/index.html). 
 
