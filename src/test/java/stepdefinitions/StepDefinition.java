@@ -41,8 +41,6 @@ public class StepDefinition {
             response = given().header("Retry-After","30000")
                     .queryParam("api-key",key)
                     .get(endpoint).then().extract().response();
-
-       // response.then().assertThat().body(Match("/resources/schema/list.json"));
     }
 
     @Then("api returns a valid response")
