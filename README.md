@@ -31,7 +31,7 @@ Inorder to generate report, run the command and Report is available in target/si
 ```sh
 gradle report
 ```
-## 📦 CI Integration
+## 💚 CI Integration
 - The tests are set to run in the [pipeline](https://gitlab.com/sreesl/automation-serenity/-/pipelines) in GitLab for every checkin.
 - Add Gitlab config file `.gitlab-ci.yml` 
     - Add task to run your build script
