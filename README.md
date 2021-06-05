@@ -1,4 +1,4 @@
-# Automating NYTimes Book API Endpoints
+# Automating NYTimes Book API Validation
 
 API automation using Serenity and Cucumber
 
