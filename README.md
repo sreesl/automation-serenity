@@ -51,9 +51,3 @@ gradle report
 - Add corresponding steps for the new scenarios in the stepDefinitions file [stepDefinition](/src/test/java/stepdefinitions/StepDefinition.java)
 
 Refer further [Cucumber Documentation](https://cucumber.io/docs/guides/10-minute-tutorial/#write-a-scenario)
-
-## 📝 API Documentation
-
-Note: Requirement around documenting API interactions was not understood well since we already have an offcial [documentation](https://developer.nytimes.com/docs/books-product/1/overview) provided by the NYT.
-
-Attempted a basic documentation using SwaggerHub. Check [here](https://app.swaggerhub.com/apis/sreesl/NYT_Books_API/0.1) .
