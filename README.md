@@ -10,8 +10,9 @@ API automation using Serenity and Cucumber
     * Gradle 7
 
 * [Clone](https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html) the project using git into your local directory
+```sh
 git clone https://gitlab.com/sreesl/automation-serenity
-
+```
 * Go to the project's root directory(automation-serenity) and Run
 
 ```sh
